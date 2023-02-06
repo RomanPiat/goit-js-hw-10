@@ -17,8 +17,6 @@ let input ='';
 refs.countryInp.addEventListener('input', debounce((evt) => {
 input = evt.target.value.trim(" ");
 refs.listEl.innerHTML = '';
-console.log(input)
-if (input ==="") return
 
 fetchCountries(URL_COUNTRIES, input)
 .then(renderCountryCard)
@@ -33,6 +31,7 @@ fetchCountries(URL_COUNTRIES, input)
 
 function renderCountryCard(countryCard) {
   let markup = '';
+  if (input == '') return
   if (countryCard.length > 10) {
     Notify.success("Too many matches found. Please enter a more specific name.")
     return
