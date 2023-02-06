@@ -31,8 +31,8 @@ fetchCountries(URL_COUNTRIES, input)
 
 function renderCountryCard(countryCard) {
   let markup = '';
-  if (input == '') return
   if (countryCard.length > 10) {
+    refs.listDivEl.innerHTML = '';
     Notify.success("Too many matches found. Please enter a more specific name.")
     return
   }
