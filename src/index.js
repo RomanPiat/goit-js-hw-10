@@ -18,7 +18,7 @@ refs.countryInp.addEventListener('input', debounce((evt) => {
 input = evt.target.value.trim(" ");
 refs.listEl.innerHTML = '';
 console.log(input)
-if (input =="") return
+if (input ==="") return
 
 fetchCountries(URL_COUNTRIES, input)
 .then(renderCountryCard)
